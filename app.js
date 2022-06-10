@@ -29,30 +29,6 @@ function addBookToLibrary(b) {
     mylibrary.push(b);
 }
 
-// function displayBooks() {
-//     container.innerHTML = '';
-//     let i = 0;
-
-//     mylibrary.forEach(element => {
-//         let card = document.createElement('div');
-//         card.setAttribute('class', 'book');
-//         card.setAttribute('id', element.title);
-//         card.innerText = `${element.title}, \n${element.author}, \n${element.pages}`
-
-//         let removebtn = document.createElement('button');
-//         removebtn.setAttribute('class', 'removebtn');
-//         removebtn.innerText = `rmv ${mylibrary[i].author}`;
-//         removebtn.addEventListener('click', () => {
-//             // container.remove(document.querySelector(`${element.title}`));
-//             console.log('remove ' + mylibrary[0].title + document.querySelector(`#${element.title}`));
-//         })
-//         card.append(removebtn);
-
-//         container.appendChild(card);
-//         i++;
-//     });
-// }
-
 function displayBooks() {
     container.innerHTML = '';
     for (let i = 0; i < mylibrary.length; i++) {
