@@ -48,7 +48,8 @@ h1 {
 .book button {
     margin-top: 8px;
     width: 102px;
-    border: 2px solid green;
+    border: 2px green;
+    border-style: dashed;
 }
 
 #newbook {
@@ -63,4 +64,14 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.form-title {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.form-author {
+    margin-bottom: 12px;
+    text-align: center;
 }

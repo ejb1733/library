@@ -7,6 +7,12 @@ popup.style.display = 'none';
 
 let newbook = document.querySelector('#newbookbtn');
 
+function RemoveEntry(index) {
+    let toRemove = document.querySelector(`#book${index}`);
+    mylibrary.splice(index);
+    toRemove.remove();
+}
+
 let submit = document.querySelector('#submit');
 submit.addEventListener('click', () => {
     let title = document.querySelector('#title').value;
@@ -33,18 +39,14 @@ function displayBooks() {
     container.innerHTML = '';
     for (let i = 0; i < mylibrary.length; i++) {
         let card = document.createElement('div');
-        card.setAttribute('id', mylibrary[i].title);
+        card.setAttribute('id', 'book' + i);
         card.setAttribute('class', 'book');
         card.innerText = `${mylibrary[i].title}, \n${mylibrary[i].author}, \n${mylibrary[i].pages}`
 
         let removebtn = document.createElement('button');
         removebtn.setAttribute('id', `${mylibrary[i].title}rmv`);
         removebtn.innerText = `remove me!`;
-        removebtn.addEventListener('click', () => {
-            console.log(`remove ${mylibrary[i].title}`);
-            let element = document.querySelector(`#${mylibrary[i].title}`);
-            element.remove();
-        })
+        removebtn.addEventListener('click', () => RemoveEntry(i));
         card.appendChild(removebtn);
 
         container.appendChild(card);
